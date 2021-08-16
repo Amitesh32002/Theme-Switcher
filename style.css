@@ -1,0 +1,166 @@
+/* clock font  */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* Theme Switcher  */
+body[data-theme = "light"]
+{
+    --color-1:rgb(196,220,241);
+    --color-2:white;
+    --color-3:rgb(200,200,200);
+    --color-4:rgb(80,82,110);
+}
+body[data-theme = "dark"]
+{
+    --color-1:#1E1F26;
+    --color-2:#292c33;
+    --color-3:rgb(39,40,42);
+    --color-4:rgb(186,186,202);
+}
+body
+{
+    font-family: 'Times New Roman', Times, serif;
+    color:var(--color-4);
+}
+.container
+{
+    background-color: var(--color-1);
+    width: 90%;
+    margin:0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-content
+{
+    background-color: var(--color-2);
+    width: 90%;
+    margin:0 auto;
+    border-radius: 12px;
+    padding: 2rem 2rem;
+}
+.container-content div{
+    padding: 0.8rem 0;
+}
+h1{
+    font-size:2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+p
+{
+    font-family: sans-serif;
+    line-height: 1.2rem;
+    letter-spacing: 2px;
+}
+button
+{
+    background-color: var(--color-4);
+    padding: 8px 30px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--color-2);
+    cursor: pointer;
+}
+.theme_switcher
+{
+    position: absolute;
+    right: 120px;
+    top:10px;
+}
+input
+{
+    width: 0;
+    height: 0;
+
+}
+label
+{
+    display: block;
+    height:30px ;
+    width: 60px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s ease backgroung-color;
+}
+label::after
+{
+    position:absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    top:50%;
+    left:5px;
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+
+}
+input:checked + label
+{
+    background-color: rgb(20, 17, 17);
+    border:2px solid whitesmoke;
+}
+input:checked + label::after
+{
+    background-color: aliceblue;
+    left:calc(100% - 25px);
+}
+
+
+/* readmore  */
+
+.dots
+{
+    display:block;
+}
+.more
+{
+    display: none;
+}
+
+
+/* clock */
+.clock_container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:650px)
+{
+    .theme_switcher
+    {
+        right:40px;
+    }
+    button
+    {
+        font-size: 10px;
+        padding: 3px 3px;
+    }
+    h1
+    {
+        font-size: 20px;
+    }
+    h2{
+        font-size: 15px;
+    }
+    p{
+        font-size: 10px;
+    };
+}
