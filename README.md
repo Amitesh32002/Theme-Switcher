@@ -2,4 +2,4 @@
 
 ![](./images/dark.png)
 <br>
-![](./images/light.png')
+![](./images/light.png)
